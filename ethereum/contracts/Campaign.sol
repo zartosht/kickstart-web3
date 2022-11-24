@@ -29,7 +29,6 @@ contract Campaign {
     uint public minimumContribution;
     uint numApprovers;
     mapping(address => bool) public approvers;
-    uint numRequests;
     Request[] public requests;
     
 
@@ -60,13 +59,11 @@ contract Campaign {
     }
 
     function createRequest(string memory description, uint value, address payable recipient) public managerOnly {        
-        Request storage newRequest = requests[numRequests];
-        // increase requests counter
-        numRequests ++;
-        // add information about new request
+        Request storage newRequest = requests.push();
         newRequest.description = description;
         newRequest.value = value;
         newRequest.recipient = recipient;
+        newRequest.complete = false;
         newRequest.approvalCount = 0;
     }
 
@@ -77,7 +74,7 @@ contract Campaign {
         request.approvalCount++;
     }
 
-    function finalizeRquest(uint index) public managerOnly payable {
+    function finalizeRequest(uint index) public managerOnly payable {
         Request storage request = requests[index];
         require(!request.complete);
         require(request.approvalCount > (numApprovers / 2));
