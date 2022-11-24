@@ -1,0 +1,35 @@
+{
+  "name": "kickstart",
+  "version": "1.0.0",
+  "description": "My third educational web3 project that involves deploying contracts from another contracts, diffrent data types, it's fun, look inside!",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "compile": "node ethereum/compile.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/zartosht/kickstart-web3.git"
+  },
+  "keywords": [
+    "web3",
+    "react",
+    "learning",
+    "crypto",
+    "ethereum",
+    "metamask"
+  ],
+  "author": "Zartosht Sepideman <hi@Zartosht.dev>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/zartosht/kickstart-web3/issues"
+  },
+  "homepage": "https://github.com/zartosht/kickstart-web3#readme",
+  "dependencies": {
+    "fs-extra": "^10.1.0",
+    "ganache-cli": "^6.12.2",
+    "mocha": "^10.1.0",
+    "solc": "^0.8.9",
+    "web3": "^1.8.1"
+  }
+}
