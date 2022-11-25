@@ -9,13 +9,25 @@ Here I learned how to create a contract that can deploy other contracts and How 
 
 ## Folder structure
 
-* Ethereum
+* ethereum
 
 This folder contains all Ethereum-related files like contracts, `compile.js`,  and `deploy.js`.
 
+* ethereum/build
+
+This folder will be populated with the compiled version of our Solidity contract after you run [`npm run compile`](#npm-run-compile).
+
+* ethereum/contracts
+
+This folder contains latest version of our contracts.
+
+* test
+
+This folder contains all tests related to this application, both front-end, and Ethereum.
+
 ## Commands
 
-These commands needs to be run one after the other the first time.
+These commands should run one after the other the first time.
 
 ### npm run compile
 
@@ -25,7 +37,7 @@ This command will refresh the contents of the `ethereum/build` folder with the n
 
 This command will deploy the factory contract to the requested network.
 
-> Before running this command, make a copy of `.env.example` and name it `.env`. Fill `ACCOUNT_MNEMONIC` and `NETWORK_URL` (from [Infura](https://www.infura.io/)). This command will output something like this:
+> Before running this command, copy `.env.example` and name it `.env`. Fill `ACCOUNT_MNEMONIC` and `NETWORK_URL` (from [Infura](https://www.infura.io/)). This command will output something like this:
 
 ```bash
 npm run deploy
