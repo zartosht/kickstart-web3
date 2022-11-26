@@ -80,7 +80,9 @@ jobs:
           NEXT_PUBLIC_FACTORY_CONTRACT_ADDRESS: ${{ secrets.FACTORY_CONTRACT_ADDRESS }}
           NETWORK_URL: ${{ secrets.NETWORK_URL }}
       - name: Static HTML export with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next export
+        run: |
+          echo NEXT_PUBLIC_FACTORY_CONTRACT_ADDRESS=${{ secrets.FACTORY_CONTRACT_ADDRESS }} > .env
+          ${{ steps.detect-package-manager.outputs.runner }} next export
         env:
           NEXT_PUBLIC_FACTORY_CONTRACT_ADDRESS: ${{ secrets.FACTORY_CONTRACT_ADDRESS }}
           NETWORK_URL: ${{ secrets.NETWORK_URL }}
