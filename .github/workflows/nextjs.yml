@@ -81,6 +81,9 @@ jobs:
           NETWORK_URL: ${{ secrets.NETWORK_URL }}
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
+        env:
+          NEXT_PUBLIC_FACTORY_CONTRACT_ADDRESS: ${{ secrets.FACTORY_CONTRACT_ADDRESS }}
+          NETWORK_URL: ${{ secrets.NETWORK_URL }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
