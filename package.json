@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha",
     "compile": "node ethereum/compile.js",
-    "deploy": "node ethereum/deploy.js"
+    "deploy": "node ethereum/deploy.js",
+    "front:dev": "next dev"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,12 @@
     "fs-extra": "^10.1.0",
     "ganache": "^7.5.0",
     "mocha": "^10.1.0",
+    "next": "^12.3.4",
+    "next-routes": "^1.4.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "semantic-ui-css": "^2.5.0",
+    "semantic-ui-react": "^2.1.4",
     "solc": "^0.8.9",
     "web3": "^1.8.1"
   }
